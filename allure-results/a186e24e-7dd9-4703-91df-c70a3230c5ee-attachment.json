@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']"
+}

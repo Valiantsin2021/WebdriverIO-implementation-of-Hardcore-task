@@ -1,0 +1,151 @@
+{
+  "id": {
+    "sessionId": "50f24190-7052-488b-b6b3-0da4e18ef973",
+    "elementId": "48a77411-8327-42a3-a680-950db3c5e26f",
+    "element-6066-11e4-a52e-4f735466cecf": "48a77411-8327-42a3-a680-950db3c5e26f",
+    "selector": "#myFrame",
+    "parent": {
+      "sessionId": "50f24190-7052-488b-b6b3-0da4e18ef973",
+      "capabilities": {
+        "acceptInsecureCerts": true,
+        "browserName": "firefox",
+        "browserVersion": "102.0.1",
+        "moz:accessibilityChecks": false,
+        "moz:buildID": "20220705093820",
+        "moz:geckodriverVersion": "0.31.0",
+        "moz:headless": false,
+        "moz:processID": 12212,
+        "moz:profile": "C:\\Users\\Valentin\\AppData\\Local\\Temp\\rust_mozprofilembdMDV",
+        "moz:shutdownTimeout": 60000,
+        "moz:useNonSpecCompliantPointerOrigin": false,
+        "moz:webdriverClick": true,
+        "moz:windowless": false,
+        "pageLoadStrategy": "normal",
+        "platformName": "windows",
+        "platformVersion": "10.0",
+        "proxy": {},
+        "setWindowRect": true,
+        "strictFileInteractability": false,
+        "timeouts": {
+          "implicit": 0,
+          "pageLoad": 300000,
+          "script": 30000
+        },
+        "unhandledPromptBehavior": "dismiss and notify"
+      },
+      "config": {
+        "specs": [
+          "./tests/*.js"
+        ],
+        "suites": {
+          "smoke": [
+            "./tests/SmokeCalculator.test.js"
+          ],
+          "criticalPath": [
+            "./tests/CriticalPathCalculator.test.js"
+          ],
+          "end2end": [
+            "./tests/End2EndCalculator.test.js"
+          ]
+        },
+        "exclude": [],
+        "logLevel": "error",
+        "logLevels": {},
+        "excludeDriverLogs": [],
+        "bail": 0,
+        "waitforInterval": 500,
+        "waitforTimeout": 20000,
+        "framework": "mocha",
+        "reporters": [
+          "spec",
+          [
+            "allure",
+            {
+              "outputDir": "allure-results",
+              "disableWebdriverStepsReporting": false,
+              "disableWebdriverScreenshotsReporting": false
+            }
+          ],
+          [
+            "junit",
+            {
+              "outputDir": "./report/junit"
+            }
+          ]
+        ],
+        "services": [
+          "selenium-standalone"
+        ],
+        "maxInstances": 10,
+        "maxInstancesPerCapability": 100,
+        "filesToWatch": [],
+        "connectionRetryTimeout": 120000,
+        "connectionRetryCount": 3,
+        "execArgv": [],
+        "runnerEnv": {},
+        "runner": "local",
+        "specFileRetries": 0,
+        "specFileRetriesDelay": 0,
+        "specFileRetriesDeferred": false,
+        "reporterSyncInterval": 100,
+        "reporterSyncTimeout": 5000,
+        "cucumberFeaturesWithLineNumbers": [],
+        "autoCompileOpts": {
+          "autoCompile": true,
+          "tsNodeOpts": {
+            "transpileOnly": true
+          },
+          "babelOpts": {}
+        },
+        "mochaOpts": {
+          "timeout": 60000,
+          "ui": "bdd"
+        },
+        "jasmineOpts": {
+          "defaultTimeoutInterval": 10000
+        },
+        "cucumberOpts": {
+          "timeout": 10000
+        },
+        "onPrepare": [],
+        "onWorkerStart": [],
+        "onWorkerEnd": [],
+        "before": [],
+        "beforeSession": [],
+        "beforeSuite": [],
+        "beforeHook": [],
+        "beforeTest": [],
+        "beforeCommand": [],
+        "afterCommand": [],
+        "afterTest": [
+          null
+        ],
+        "afterHook": [],
+        "afterSuite": [],
+        "afterSession": [],
+        "after": [],
+        "onComplete": [
+          null
+        ],
+        "onReload": [],
+        "beforeFeature": [],
+        "beforeScenario": [],
+        "beforeStep": [],
+        "afterStep": [],
+        "afterScenario": [],
+        "afterFeature": [],
+        "baseUrl": "http://www.google.com/intl/ru/",
+        "_": [
+          "run"
+        ],
+        "suite": [
+          "criticalPath"
+        ],
+        "$0": "node_modules\\@wdio\\cli\\bin\\wdio.js",
+        "config-path": "wdio.conf.js",
+        "ignoredWorkerServices": []
+      }
+    },
+    "isReactElement": false
+  }
+}

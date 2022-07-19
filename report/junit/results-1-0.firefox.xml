@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Smoke tests" timestamp="2022-07-19T10:04:34" time="9.758" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Smoke tests"/>
+      <property name="capabilities" value="firefox.102_0_1.windows"/>
+      <property name="file" value=".\tests\SmokeCalculator.test.js"/>
+    </properties>
+    <testcase classname="firefox.102_0_1.windows.Smoke_tests" name="Open google cloud calculator and yopmail com" time="9.734">
+      <system-out><![CDATA[
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/url - {"url":"http://www.google.com/intl/ru/"}
+RESULT: {"url":"http://www.google.com/intl/ru/"}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/title - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/url - {}
+RESULT: {}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/url - {"url":"http://www.google.com/intl/ru/"}
+RESULT: {"url":"http://www.google.com/intl/ru/"}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/execute/sync - {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
+RESULT: {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window/handles - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window - {"handle":"a4009310-bdf4-403e-a7ae-924e4d34f0e9"}
+RESULT: {"handle":"a4009310-bdf4-403e-a7ae-924e4d34f0e9"}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/title - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/window - {"handle":"a4009310-bdf4-403e-a7ae-924e4d34f0e9"}
+RESULT: {"handle":"a4009310-bdf4-403e-a7ae-924e4d34f0e9"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/element - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/elements - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/elements - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/elements - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/element - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/element/f83be502-ec54-4138-a9a4-96b0af5086dc/clear - {}
+RESULT: {}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/element/f83be502-ec54-4138-a9a4-96b0af5086dc/value - {"text":"me@yopmail.com"}
+RESULT: {"text":"me@yopmail.com"}
+COMMAND: POST /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/actions - {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
+RESULT: {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
+COMMAND: DELETE /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/actions - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/title - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/title - {}
+RESULT: {}
+COMMAND: GET /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5/screenshot - {}
+RESULT: {}
+COMMAND: DELETE /session/c4ae2f87-92c7-4d2e-89c5-52fd0acfc8f5 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

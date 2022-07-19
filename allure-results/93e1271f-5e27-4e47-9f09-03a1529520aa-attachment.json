@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "md-list-item:nth-child(10) > div.md-list-item-text.ng-binding"
+}

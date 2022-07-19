@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "md-option[value='NVIDIA_TESLA_V100']"
+}
