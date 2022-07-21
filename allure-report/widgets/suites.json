@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"79ebedaf6f35f465d08e3d8974d05340","name":"Opens Google cloud calculator and adds data to create estimate","statistic":{"failed":1,"broken":1,"skipped":0,"passed":4,"unknown":0,"total":6}},{"uid":"ddea6e2e5209eb1222fd7041eed6c83b","name":"Smoke tests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}

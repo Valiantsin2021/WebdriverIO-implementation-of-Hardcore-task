@@ -3,11 +3,14 @@ const MailPage = require('../pages/MailPage');
 
 describe('Smoke tests', () => {
 
-    it("Open google cloud calculator and yopmail.com", async function(){
+    it("Open google and yopmail.com", async function(){
         await CalculatorPage.open();
         await browser.pause(5000);
         console.log(await browser.getTitle());
         await expect(browser).toHaveUrlContaining("google");
+        await CalculatorPage.clickSearch();
+        await CalculatorPage.setCalculator();
+        await expect(browser).toHaveTitle("Google Cloud Pricing Calculator")
         await MailPage.open();
         console.log(await browser.getTitle());
     

@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//form[@name='ComputeEngineForm']//md-checkbox[@aria-label='Add GPUs']"
-}

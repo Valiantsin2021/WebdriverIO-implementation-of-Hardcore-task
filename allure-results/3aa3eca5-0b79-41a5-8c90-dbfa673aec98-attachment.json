@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "md-input-container.flex input[ng-model='listingCtrl.computeServer.quantity']"
-}

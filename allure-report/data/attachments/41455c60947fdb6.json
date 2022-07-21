@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "#compute > md-toolbar > h2 > span:nth-child(1)"
-}

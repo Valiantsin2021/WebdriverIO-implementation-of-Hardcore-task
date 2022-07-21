@@ -15,6 +15,7 @@
         "mocha": "^10.0.0",
         "selenium-webdriver": "^4.3.0",
         "wdio": "^6.0.1",
+        "wdio-html-nice-reporter": "^8.0.3-beta2",
         "webdriverio": "^7.20.5"
     },
     "devDependencies": {

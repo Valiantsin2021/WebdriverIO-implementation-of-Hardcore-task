@@ -1,57 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Smoke tests" timestamp="2022-07-19T10:04:31" time="11.263" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="Smoke tests" timestamp="2022-07-21T15:04:37" time="21.586" tests="1" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="Smoke tests"/>
       <property name="capabilities" value="chrome.103_0_5060_114.windows"/>
       <property name="file" value=".\tests\SmokeCalculator.test.js"/>
     </properties>
-    <testcase classname="chrome.103_0_5060_114.windows.Smoke_tests" name="Open google cloud calculator and yopmail com" time="11.241">
+    <testcase classname="chrome.103_0_5060_114.windows.Smoke_tests" name="Open google and yopmail com" time="21.574">
       <system-out><![CDATA[
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/url - {"url":"http://www.google.com/intl/ru/"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/url - {"url":"http://www.google.com/intl/ru/"}
 RESULT: {"url":"http://www.google.com/intl/ru/"}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/title - {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
 RESULT: {}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/url - {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/url - {}
 RESULT: {}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/url - {"url":"http://www.google.com/intl/ru/"}
-RESULT: {"url":"http://www.google.com/intl/ru/"}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/window/handles - {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"[name='q']"}
+RESULT: {"using":"css selector","value":"[name='q']"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7762 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"49eba63c-8152-42b9-8876-1e4afc13a977","ELEMENT":"49eba63c-8152-42b9-8876-1e4afc13a977"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7762 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"49eba63c-8152-42b9-8876-1e4afc13a977","ELEMENT":"49eba63c-8152-42b9-8876-1e4afc13a977"}]}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"[name='q']"}
+RESULT: {"using":"css selector","value":"[name='q']"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element/49eba63c-8152-42b9-8876-1e4afc13a977/clear - {}
 RESULT: {}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/execute/sync - {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
-RESULT: {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/window/handles - {}
-RESULT: {}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/window/handles - {}
-RESULT: {}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/window - {"handle":"CDwindow-551097EADE0A7100F2358F61ADE994CA"}
-RESULT: {"handle":"CDwindow-551097EADE0A7100F2358F61ADE994CA"}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/title - {}
-RESULT: {}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/window/handles - {}
-RESULT: {}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/window - {"handle":"CDwindow-551097EADE0A7100F2358F61ADE994CA"}
-RESULT: {"handle":"CDwindow-551097EADE0A7100F2358F61ADE994CA"}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/element - {"using":"css selector","value":"#login"}
-RESULT: {"using":"css selector","value":"#login"}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/elements - {"using":"css selector","value":"#login"}
-RESULT: {"using":"css selector","value":"#login"}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/element - {"using":"css selector","value":"#login"}
-RESULT: {"using":"css selector","value":"#login"}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/element/70e0b2f8-b9bf-4426-b183-eec3e8a9ee5e/clear - {}
-RESULT: {}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/element/70e0b2f8-b9bf-4426-b183-eec3e8a9ee5e/value - {"text":"me@yopmail.com"}
-RESULT: {"text":"me@yopmail.com"}
-COMMAND: POST /session/c3176118f70210fd94109058607cdf57/actions - {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element/49eba63c-8152-42b9-8876-1e4afc13a977/value - {"text":"Cloud calculator"}
+RESULT: {"text":"Cloud calculator"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/actions - {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
 RESULT: {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
-COMMAND: DELETE /session/c3176118f70210fd94109058607cdf57/actions - {}
+COMMAND: DELETE /session/f0c23de97146bcb90c5777d8206ad263/actions - {}
 RESULT: {}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/title - {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
 RESULT: {}
-COMMAND: GET /session/c3176118f70210fd94109058607cdf57/screenshot - {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"a[href='https://cloud.google.com/products/calculator']"}
+RESULT: {"using":"css selector","value":"a[href='https://cloud.google.com/products/calculator']"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7762 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"d28643f8-8fcc-495a-a483-18dcd0a31a8d","ELEMENT":"d28643f8-8fcc-495a-a483-18dcd0a31a8d"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7762 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"d28643f8-8fcc-495a-a483-18dcd0a31a8d","ELEMENT":"d28643f8-8fcc-495a-a483-18dcd0a31a8d"}]}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"a[href='https://cloud.google.com/products/calculator']"}
+RESULT: {"using":"css selector","value":"a[href='https://cloud.google.com/products/calculator']"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element/d28643f8-8fcc-495a-a483-18dcd0a31a8d/click - {}
 RESULT: {}
-COMMAND: DELETE /session/c3176118f70210fd94109058607cdf57 - {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
+RESULT: {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
+RESULT: {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/url - {"url":"http://www.google.com/intl/ru/"}
+RESULT: {"url":"http://www.google.com/intl/ru/"}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/execute/sync - {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
+RESULT: {"script":"return (function newWindow(url, windowName, windowFeatures) {\n    window.open(url, windowName || '', windowFeatures || '');\n}).apply(null, arguments)","args":["https://yopmail.com/","",""]}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/window/handles - {}
+RESULT: {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/window - {"handle":"CDwindow-DFE7E9A29975ACD3523755A95C96BE1D"}
+RESULT: {"handle":"CDwindow-DFE7E9A29975ACD3523755A95C96BE1D"}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
+RESULT: {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/window/handles - {}
+RESULT: {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/window - {"handle":"CDwindow-DFE7E9A29975ACD3523755A95C96BE1D"}
+RESULT: {"handle":"CDwindow-DFE7E9A29975ACD3523755A95C96BE1D"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/elements - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element - {"using":"css selector","value":"#login"}
+RESULT: {"using":"css selector","value":"#login"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element/da1078a0-d9b3-4ca0-9f3b-09522b054ba1/clear - {}
+RESULT: {}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/element/da1078a0-d9b3-4ca0-9f3b-09522b054ba1/value - {"text":"me@yopmail.com"}
+RESULT: {"text":"me@yopmail.com"}
+COMMAND: POST /session/f0c23de97146bcb90c5777d8206ad263/actions - {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
+RESULT: {"actions":[{"type":"key","id":"keyboard","actions":[{"type":"keyDown","value":""},{"type":"keyUp","value":""}]}]}
+COMMAND: DELETE /session/f0c23de97146bcb90c5777d8206ad263/actions - {}
+RESULT: {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/title - {}
+RESULT: {}
+COMMAND: GET /session/f0c23de97146bcb90c5777d8206ad263/screenshot - {}
+RESULT: {}
+COMMAND: DELETE /session/f0c23de97146bcb90c5777d8206ad263 - {}
 RESULT: {}
 ]]></system-out>
     </testcase>
