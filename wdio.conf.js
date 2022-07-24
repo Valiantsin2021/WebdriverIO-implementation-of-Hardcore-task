@@ -4,7 +4,7 @@ if(!ENV || !['dev', 'qa', 'stage', 'prod'].includes(ENV)){
     console.log('please use the correct ENV value: dev | qa | stage | prod')
     process.exit()
 }
-// const allure = require('allure-commandline');
+const allure = require('allure-commandline');
 const {ReportAggregator, HtmlReporter} = require('wdio-html-nice-reporter');
 let reportAggregator = ReportAggregator;
 
@@ -162,11 +162,11 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',
 
-    // ['allure', {
-    //     outputDir: 'allure-results',
-    //     disableWebdriverStepsReporting: false,
-    //     disableWebdriverScreenshotsReporting: false,
-    // }],
+    ['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }],
     ["html-nice", {
         outputDir: './report/html-reports/',
         filename: 'report.html',
@@ -176,7 +176,7 @@ exports.config = {
         showInBrowser: true,
         collapseTests: false,
         //to turn on screenshots after every test
-        useOnAfterCommandForScreenshot: true,
+        useOnAfterCommandForScreenshot: false,
 
         //to initialize the logger
         // LOG: log4j.getLogger("default")
@@ -361,31 +361,34 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-     onComplete: function(exitCode, config, capabilities, results) {
+    //  onComplete: function(exitCode, config, capabilities, results) {
+    //     (async () => {
+    //         await reportAggregator.createReport();
+    //     })();
+    // },
+    onComplete: function() {
         (async () => {
             await reportAggregator.createReport();
         })();
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
+
+            generation.on('exit', function(exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
     },
-    // onComplete: function() {
-    //     const reportError = new Error('Could not generate Allure report')
-    //     const generation = allure(['generate', 'allure-results', '--clean'])
-    //     return new Promise((resolve, reject) => {
-    //         const generationTimeout = setTimeout(
-    //             () => reject(reportError),
-    //             5000)
-
-    //         generation.on('exit', function(exitCode) {
-    //             clearTimeout(generationTimeout)
-
-    //             if (exitCode !== 0) {
-    //                 return reject(reportError)
-    //             }
-
-    //             console.log('Allure report successfully generated')
-    //             resolve()
-    //         })
-    //     })
-    // },
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session

@@ -4,7 +4,7 @@ const MailPage = require('../pages/MailPage');
 const { vmClassExpected, instanceExpected, ssdExpected, commitmentTermExpected } = require('../utils/constants');
 const { regionExpected, monthlyRentExpected , mailMonthlyEstimateExpexted} = require('../models/region');
 
-describe('Opens Google cloud calculator and adds data to create estimate', function(){
+describe('End to end test of Google Cloud calculator with the results emailed to temporary email account', function(){
     
     it('Opens Google cloud website and searches for Google cloud calculator', async function(){
         

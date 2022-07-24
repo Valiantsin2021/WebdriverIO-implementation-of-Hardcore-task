@@ -32,15 +32,15 @@
 
         <tr>
             <td>Start</td>
-            <td>2022-07-24T14:53:49.932Z</td>
+            <td>2022-07-24T16:22:44.217Z</td>
         </tr>
         <tr>
             <td>End</td>
-            <td>2022-07-24T14:54:23Z</td>
+            <td>2022-07-24T16:23:33Z</td>
         </tr>
         <tr>
             <td>Duration</td>
-            <td>00:00:33.999</td>
+            <td>00:00:49.614</td>
         </tr>
         <tr>
             <td>Breakdown</td>
@@ -52,9 +52,9 @@
                         <td class='test-fail'>Test Failures</td>
                     </tr>
                     <tr>
-                        <td>11</td>
+                        <td>8</td>
                         <td>0</td>
-                        <td>0</td>
+                        <td>3</td>
                     </tr>
                 </table>
             </td>
@@ -100,9 +100,9 @@
 <table class="table table-bordered table-suite">
     <tr class="suite-header">
         <td colspan="2"
-            class="suite-pass">
+            class="suite-fail">
             <h3>
-                <span style="margin: 2px; padding: 1px" class="glyphicon glyphicon-chevron-up">&nbsp;</span>Opens Google cloud calculator and adds data to create estimate
+                <span style="margin: 2px; padding: 1px" class="glyphicon glyphicon-chevron-up">&nbsp;</span>End to end test of Google Cloud calculator with the results emailed to temporary email account
             </h3>
             
         </td>
@@ -118,15 +118,15 @@
     
         <tr>
             <td>Suite Start</td>
-            <td>Sun Jul 24 2022 16:53:49 GMT+0200 (Центральная Европа, летнее время)</td>
+            <td>Sun Jul 24 2022 18:22:44 GMT+0200 (Центральная Европа, летнее время)</td>
         </tr>
         <tr>
             <td>Suite End</td>
-            <td>Sun Jul 24 2022 16:54:22 GMT+0200 (Центральная Европа, летнее время)</td>
+            <td>Sun Jul 24 2022 18:23:33 GMT+0200 (Центральная Европа, летнее время)</td>
         </tr>
         <tr>
             <td>Suite Duration</td>
-            <td>00:00:32.974</td>
+            <td>00:00:49.489</td>
         </tr>
 
         
@@ -279,29 +279,42 @@
             <td>
                 <table class="table table-test">
                     <tr class="test-header">
-                        <td colspan="2" class="test-pass">
+                        <td colspan="2" class="test-fail">
                             <span class="test-expand glyphicon glyphicon-chevron-up">&nbsp;</span>
-                            <span class="success">&#10004;</span>
+                            <span class="error">&#10006;</span>
                             <span class="test-title">Open yopmail.com and creates temporal email</span>
                         </td>
                     </tr>
                     
-                </table>
-            </td>
-        <tr>
-    </table>
-    
-    <table>
-        <tr>
-            <td>
-                <table class="table table-test">
-                    <tr class="test-header">
-                        <td colspan="2" class="test-pass">
-                            <span class="test-expand glyphicon glyphicon-chevron-up">&nbsp;</span>
-                            <span class="success">&#10004;</span>
-                            <span class="test-title">Sends email with estimate to created email account</span>
-                        </td>
-                    </tr>
+                        
+                            <tr class="test-row expandable-control">
+                                <td colspan="2">
+                                    <p class="pre assert ">
+                                <span style="margin: 2px; padding: 1px"
+                                      class='glyphicon glyphicon-chevron-down'>&nbsp;</span>
+                                        Assertion: Tried to run command without establishing a connection
+                                    </p>
+                                </td>
+                            </tr>
+                            
+                                <tr class="test-row">
+                                    <td colspan="2">
+                                        <pre class='pre stack panel'>invalid session id: Tried to run command without establishing a connection
+    at getErrorFromResponseBody (C:\node\Hardcore\node_modules\webdriver\build\utils.js:198:12)
+    at NodeJSRequest._request (C:\node\Hardcore\node_modules\webdriver\build\request\index.js:166:60)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Browser.wrapCommandFn (C:\node\Hardcore\node_modules\@wdio\utils\build\shim.js:137:29)
+    at async Browser.newWindow (C:\node\Hardcore\node_modules\webdriverio\build\commands\browser\newWindow.js:80:5)
+    at async Browser.wrapCommandFn (C:\node\Hardcore\node_modules\@wdio\utils\build\shim.js:137:29)
+    at async MailPage.open (C:\node\Hardcore\pages\MailPage.js:20:9)
+    at async Context.&lt;anonymous&gt; (C:\node\Hardcore\tests\End2EndCalculator.test.js:81:9)</pre>
+                                    </td>
+                                </tr>
+                            
+                        
+                        
+                        
+                        
                     
                 </table>
             </td>
@@ -313,12 +326,83 @@
             <td>
                 <table class="table table-test">
                     <tr class="test-header">
-                        <td colspan="2" class="test-pass">
+                        <td colspan="2" class="test-fail">
                             <span class="test-expand glyphicon glyphicon-chevron-up">&nbsp;</span>
-                            <span class="success">&#10004;</span>
+                            <span class="error">&#10006;</span>
+                            <span class="test-title">Sends email with estimate to created email account</span>
+                        </td>
+                    </tr>
+                    
+                        
+                            <tr class="test-row expandable-control">
+                                <td colspan="2">
+                                    <p class="pre assert ">
+                                <span style="margin: 2px; padding: 1px"
+                                      class='glyphicon glyphicon-chevron-down'>&nbsp;</span>
+                                        Assertion: Tried to run command without establishing a connection
+                                    </p>
+                                </td>
+                            </tr>
+                            
+                                <tr class="test-row">
+                                    <td colspan="2">
+                                        <pre class='pre stack panel'>invalid session id: Tried to run command without establishing a connection
+    at getErrorFromResponseBody (C:\node\Hardcore\node_modules\webdriver\build\utils.js:198:12)
+    at NodeJSRequest._request (C:\node\Hardcore\node_modules\webdriver\build\request\index.js:166:60)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Browser.wrapCommandFn (C:\node\Hardcore\node_modules\@wdio\utils\build\shim.js:137:29)
+    at async Context.&lt;anonymous&gt; (C:\node\Hardcore\tests\End2EndCalculator.test.js:94:25)</pre>
+                                    </td>
+                                </tr>
+                            
+                        
+                        
+                        
+                        
+                    
+                </table>
+            </td>
+        <tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td>
+                <table class="table table-test">
+                    <tr class="test-header">
+                        <td colspan="2" class="test-fail">
+                            <span class="test-expand glyphicon glyphicon-chevron-up">&nbsp;</span>
+                            <span class="error">&#10006;</span>
                             <span class="test-title">Switches back to mail page and checks email received</span>
                         </td>
                     </tr>
+                    
+                        
+                            <tr class="test-row expandable-control">
+                                <td colspan="2">
+                                    <p class="pre assert ">
+                                <span style="margin: 2px; padding: 1px"
+                                      class='glyphicon glyphicon-chevron-down'>&nbsp;</span>
+                                        Assertion: Tried to run command without establishing a connection
+                                    </p>
+                                </td>
+                            </tr>
+                            
+                                <tr class="test-row">
+                                    <td colspan="2">
+                                        <pre class='pre stack panel'>invalid session id: Tried to run command without establishing a connection
+    at getErrorFromResponseBody (C:\node\Hardcore\node_modules\webdriver\build\utils.js:198:12)
+    at NodeJSRequest._request (C:\node\Hardcore\node_modules\webdriver\build\request\index.js:166:60)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Browser.wrapCommandFn (C:\node\Hardcore\node_modules\@wdio\utils\build\shim.js:137:29)
+    at async Context.&lt;anonymous&gt; (C:\node\Hardcore\tests\End2EndCalculator.test.js:103:25)</pre>
+                                    </td>
+                                </tr>
+                            
+                        
+                        
+                        
+                        
                     
                 </table>
             </td>

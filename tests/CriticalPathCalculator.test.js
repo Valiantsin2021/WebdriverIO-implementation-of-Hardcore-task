@@ -2,7 +2,7 @@ const CalculatorPage = require('../pages/CalculatorPage');
 const { vmClassExpected, instanceExpected, ssdExpected, commitmentTermExpected } = require('../utils/constants');
 const { regionExpected, monthlyRentExpected } = require('../models/region');
 
-describe('Opens Google cloud calculator and adds data to create estimate', function(){
+describe('Critical Path test of Google cloud calculator', function(){
     
     it('Opens Google cloud website and searches for Google cloud calculator', async function(){
         

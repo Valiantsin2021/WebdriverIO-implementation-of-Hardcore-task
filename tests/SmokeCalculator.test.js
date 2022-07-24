@@ -1,7 +1,7 @@
 const CalculatorPage = require('../pages/CalculatorPage');
 const MailPage = require('../pages/MailPage');
 
-describe('Smoke tests', () => {
+describe('Smoke test of Google cloud calculator', () => {
 
     it("Open google and yopmail.com", async function(){
         await CalculatorPage.open();
