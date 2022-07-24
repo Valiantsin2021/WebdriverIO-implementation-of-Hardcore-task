@@ -6,6 +6,7 @@ const {urlMail, mail} = require ('../utils/constants')
 
 class MailPage extends BasePage{
 
+    get cookies(){ return $("#accept");}
     get login(){ return $("#login");}
     get refreshBtn(){ return $("#refresh");}
     get monthlyEstimate(){ return $("#mail h2");}
@@ -15,13 +16,19 @@ class MailPage extends BasePage{
     // Open yopmail.com
 
     async open(){
-        const url = urlMail;
-        await super.open()
-        await browser.newWindow(url);
+
+        await browser.newWindow(urlMail);
 
     }
 
     //      Create temporal email
+
+    async manageCookies(){
+
+        await this.cookies.waitForDisplayed();
+        await this.cookies.click();
+
+    }
 
     async setLocateMail(){
 
@@ -39,8 +46,6 @@ class MailPage extends BasePage{
         await this.refreshBtn.waitForClickable({timeout: 5000});
         await this.refreshBtn.click();
         await browser.switchToFrame(await this.frame);
-
-        console.log(await this.monthlyEstimate.getValue());
     }
 
     async close(){

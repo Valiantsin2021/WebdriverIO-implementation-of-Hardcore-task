@@ -1,4 +1,6 @@
 const CalculatorPage = require('../pages/CalculatorPage');
+const { vmClassExpected, instanceExpected, ssdExpected, commitmentTermExpected } = require('../utils/constants');
+const { regionExpected, monthlyRentExpected } = require('../models/region');
 
 describe('Opens Google cloud calculator and adds data to create estimate', function(){
     
@@ -6,6 +8,7 @@ describe('Opens Google cloud calculator and adds data to create estimate', funct
         
         await CalculatorPage.maximize();
         await CalculatorPage.open();
+        await CalculatorPage.manageCookies();
         await CalculatorPage.clickSearch();
         await expect(browser).toHaveUrlContaining("google");
     
@@ -34,15 +37,41 @@ describe('Opens Google cloud calculator and adds data to create estimate', funct
 
     });
 
-    it("Checks the estimate data is as expected", async function(){
+    it("Checks the VM class", async function(){
 
-        await CalculatorPage.VMClass();
-        await CalculatorPage.instanceType();
-        await CalculatorPage.region();
-        await CalculatorPage.SSDType();
-        await CalculatorPage.commitmentTerm();
-        await CalculatorPage.monthlyRent();
-        await browser.saveScreenshot('./screenshots/screenshot_criticalPath.png');
-
+        //  Check Provisioning model is set to Regular in estimate
+        await expect(CalculatorPage.VMClassEstimate).toHaveText(vmClassExpected);
     });
+    
+    it("Checks Instance type is n1-standard-8", async function(){
+        
+        //      Check Instance type is n1-standard-8 in estimate
+
+        await expect(CalculatorPage.instanceTypeEstimate).toHaveText(instanceExpected);
+    });
+
+    it("Check region", async function(){
+        
+        // Check region
+        await expect(CalculatorPage.regionEstimate).toHaveText(regionExpected);
+    });
+
+    it("Check Local SSD is 2x375 Gb", async function(){
+        
+        // Check Local SSD is 2x375 Gb
+        await expect(CalculatorPage.SSDTypeEstimate).toHaveText(ssdExpected);
+    });
+
+    it("Check commitment term is set to 1 Year", async function(){
+        
+        // Check commitment term is set to 1 Year
+        await expect(CalculatorPage.commitementTermEstimate).toHaveText(commitmentTermExpected);
+    });
+    
+    it("Check monthly rent sum is the same with the manual test", async function(){
+
+        //      Check monthly rent sum is the same with the manual test
+        await expect(CalculatorPage.monthlyRentEstimate).toHaveText(monthlyRentExpected);
+    });
+
 })

@@ -1,7 +1,8 @@
 
 const CalculatorPage = require('../pages/CalculatorPage');
 const MailPage = require('../pages/MailPage');
-var monthlyEstimateExpexted = "Estimated Monthly Cost: USD 1,081.20";
+const { vmClassExpected, instanceExpected, ssdExpected, commitmentTermExpected } = require('../utils/constants');
+const { regionExpected, monthlyRentExpected , mailMonthlyEstimateExpexted} = require('../models/region');
 
 describe('Opens Google cloud calculator and adds data to create estimate', function(){
     
@@ -9,6 +10,7 @@ describe('Opens Google cloud calculator and adds data to create estimate', funct
         
         await CalculatorPage.maximize();
         await CalculatorPage.open();
+        await CalculatorPage.manageCookies();
         await CalculatorPage.clickSearch();
         await expect(browser).toHaveUrlContaining("google");
     
@@ -37,25 +39,51 @@ describe('Opens Google cloud calculator and adds data to create estimate', funct
 
     });
 
-    it("Checks the estimate data is as expected", async function(){
+    it("Checks the VM class", async function(){
 
-        await CalculatorPage.VMClass();
-        await CalculatorPage.instanceType();
-        await CalculatorPage.region();
-        await CalculatorPage.SSDType();
-        await CalculatorPage.commitmentTerm();
-        await CalculatorPage.monthlyRent();
- 
+        //  Check Provisioning model is set to Regular in estimate
+        await expect(CalculatorPage.VMClassEstimate).toHaveText(vmClassExpected);
+    });
+    
+    it("Checks Instance type is n1-standard-8", async function(){
+        
+        //      Check Instance type is n1-standard-8 in estimate
+
+        await expect(CalculatorPage.instanceTypeEstimate).toHaveText(instanceExpected);
+    });
+
+    it("Check region", async function(){
+        
+        // Check region
+        await expect(CalculatorPage.regionEstimate).toHaveText(regionExpected);
+    });
+
+    it("Check Local SSD is 2x375 Gb", async function(){
+        
+        // Check Local SSD is 2x375 Gb
+        await expect(CalculatorPage.SSDTypeEstimate).toHaveText(ssdExpected);
+    });
+
+    it("Check commitment term is set to 1 Year", async function(){
+        
+        // Check commitment term is set to 1 Year
+        await expect(CalculatorPage.commitementTermEstimate).toHaveText(commitmentTermExpected);
+    });
+    
+    it("Check monthly rent sum is the same with the manual test", async function(){
+
+        //      Check monthly rent sum is the same with the manual test
+        await expect(CalculatorPage.monthlyRentEstimate).toHaveText(monthlyRentExpected);
     });
 
     it("Open yopmail.com and creates temporal email", async function(){
 
-        await browser.newWindow('https://google.com');
         await MailPage.open();
         console.log(await browser.getTitle());
     
         const handles = await browser.getWindowHandles();
         await browser.switchToWindow(handles[1]);
+        await MailPage.manageCookies();
         await MailPage.setLocateMail();
         await expect(browser).toHaveTitle("Входящие");        
 
@@ -75,8 +103,7 @@ describe('Opens Google cloud calculator and adds data to create estimate', funct
         const handles = await browser.getWindowHandles();
         await browser.switchToWindow(handles[1]);
         await MailPage.checkEmailEstimatedReceived()
-        await expect(MailPage.monthlyEstimate).toHaveTextContaining(monthlyEstimateExpexted);
-        await browser.saveScreenshot('./screenshots/screenshot_end2end.png');
+        await expect(MailPage.monthlyEstimate).toHaveTextContaining(mailMonthlyEstimateExpexted);
 
     });
 

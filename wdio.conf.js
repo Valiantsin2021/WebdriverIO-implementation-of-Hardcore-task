@@ -4,7 +4,7 @@ if(!ENV || !['dev', 'qa', 'stage', 'prod'].includes(ENV)){
     console.log('please use the correct ENV value: dev | qa | stage | prod')
     process.exit()
 }
-const allure = require('allure-commandline');
+// const allure = require('allure-commandline');
 const {ReportAggregator, HtmlReporter} = require('wdio-html-nice-reporter');
 let reportAggregator = ReportAggregator;
 
