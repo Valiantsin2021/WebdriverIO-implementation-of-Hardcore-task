@@ -4,7 +4,7 @@ if(!ENV || !['dev', 'qa', 'stage', 'prod'].includes(ENV)){
     console.log('please use the correct ENV value: dev | qa | stage | prod')
     process.exit()
 }
-const allure = require('allure-commandline');
+// const allure = require('allure-commandline');
 const {ReportAggregator, HtmlReporter} = require('wdio-html-nice-reporter');
 let reportAggregator = ReportAggregator;
 
@@ -162,11 +162,11 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',
 
-    ['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: false,
-    }],
+    // ['allure', {
+    //     outputDir: 'allure-results',
+    //     disableWebdriverStepsReporting: false,
+    //     disableWebdriverScreenshotsReporting: false,
+    // }],
     ["html-nice", {
         outputDir: './report/html-reports/',
         filename: 'report.html',
@@ -370,24 +370,24 @@ exports.config = {
         (async () => {
             await reportAggregator.createReport();
         })();
-        const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
-        return new Promise((resolve, reject) => {
-            const generationTimeout = setTimeout(
-                () => reject(reportError),
-                5000)
+        // const reportError = new Error('Could not generate Allure report')
+        // const generation = allure(['generate', 'allure-results', '--clean'])
+        // return new Promise((resolve, reject) => {
+        //     const generationTimeout = setTimeout(
+        //         () => reject(reportError),
+        //         5000)
 
-            generation.on('exit', function(exitCode) {
-                clearTimeout(generationTimeout)
+        //     generation.on('exit', function(exitCode) {
+        //         clearTimeout(generationTimeout)
 
-                if (exitCode !== 0) {
-                    return reject(reportError)
-                }
+        //         if (exitCode !== 0) {
+        //             return reject(reportError)
+        //         }
 
-                console.log('Allure report successfully generated')
-                resolve()
-            })
-        })
+        //         console.log('Allure report successfully generated')
+        //         resolve()
+        //     })
+        // })
     },
     /**
     * Gets executed when a refresh happens.
