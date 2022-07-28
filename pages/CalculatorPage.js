@@ -51,7 +51,6 @@ class CalculatorPage extends BasePage{
     // Open Google Cloud
 
     open(){
-        // const url = urlCalculator;
         return super.open();
     }
 
