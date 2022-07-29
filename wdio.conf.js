@@ -176,7 +176,7 @@ exports.config = {
         showInBrowser: true,
         collapseTests: false,
         //to turn on screenshots after every test
-        useOnAfterCommandForScreenshot: false,
+        useOnAfterCommandForScreenshot: true,
 
         //to initialize the logger
         // LOG: log4j.getLogger("default")
@@ -316,6 +316,7 @@ exports.config = {
             // const filePath = path.resolve('./', `${filename}.png`);
 
             await browser.saveScreenshot('./screenshots/errors/test_failed.png')
+            await browser.takeScreenshot()
         }
     },
 

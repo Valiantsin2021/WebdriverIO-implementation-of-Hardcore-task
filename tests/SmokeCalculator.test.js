@@ -24,5 +24,5 @@ describe('Smoke test of Google cloud calculator', () => {
         await expect(browser).toHaveTitle("Входящие");
         await browser.saveScreenshot('./screenshots/screenshot_smoke.png');
 
-    })
+    }, 3)
 });

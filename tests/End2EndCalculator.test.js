@@ -14,7 +14,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await CalculatorPage.clickSearch();
         await expect(browser).toHaveUrlContaining("google");
     
-    });
+    }, 2);
 
     it("Opens Google cloud calculator link and adds data to create estimate", async function(){
     
@@ -37,7 +37,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await CalculatorPage.setAddToEstimate();
         await expect(CalculatorPage.estimateAd).toHaveTextContaining("Compute Engine");
 
-    });
+    }, 2);
 
     it("Checks the VM class", async function(){
 
@@ -87,7 +87,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await MailPage.setLocateMail();
         await expect(browser).toHaveTitle("Входящие");        
 
-    });
+    }, 2);
 
     it("Sends email with estimate to created email account", async function(){
 
