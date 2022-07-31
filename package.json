@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "mocha --timeout 10000",
+        "test": "ENV=qa REG=FRANKFURT wdio run wdio.conf.js -- --suite smoke",
         "wdio": "wdio run wdio.conf.js"
     },
     "keywords": [],
