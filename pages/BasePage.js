@@ -2,11 +2,11 @@
 
 class BasePage{
     
-    open () {
+    async open () {
         return browser.url('./')
     }
 
-    maximize(){
+    async maximize(){
         return browser.maximizeWindow()
     }
 }

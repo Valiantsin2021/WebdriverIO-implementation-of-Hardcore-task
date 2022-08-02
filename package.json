@@ -4,16 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "ENV=qa REG=FRANKFURT wdio run wdio.conf.js -- --suite smoke",
+        "test": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite smoke",
         "wdio": "wdio run wdio.conf.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "selenium-webdriver": "^4.3.0",
-        "wdio": "^6.0.1",
-        "webdriverio": "^7.20.5"
+        "selenium-webdriver": "^4.3.0"
     },
     "devDependencies": {
         "@wdio/allure-reporter": "^7.20.3",
@@ -27,7 +25,9 @@
         "chromedriver": "^103.0.0",
         "cross-env": "^7.0.3",
         "mocha": "^10.0.0",
+        "wdio": "^6.0.1",
         "wdio-html-nice-reporter": "^8.0.3-beta2",
-        "webdriver-manager": "^12.1.8"
+        "webdriver-manager": "^12.1.8",
+        "webdriverio": "^7.20.9"
     }
 }

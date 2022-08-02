@@ -50,20 +50,20 @@ class CalculatorPage extends BasePage{
 
     // Open Google Cloud
 
-    open(){
+    async open(){
         return super.open();
     }
 
-    maximize(){
+    async maximize(){
         return super.maximize();
     }
     
     //  Search for Google cloud calculator
     async manageCookies(){
 
-        await this.cookies.waitForDisplayed();
+        if(this.cookies.waitForDisplayed()) {
         await this.cookies.click();
-
+        }
     }
 
     async clickSearch(){
