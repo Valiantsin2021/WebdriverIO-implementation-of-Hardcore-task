@@ -10,7 +10,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         
         await CalculatorPage.maximize();
         await CalculatorPage.open();
-        await CalculatorPage.manageCookies();
+        // await CalculatorPage.manageCookies();
         await CalculatorPage.clickSearch();
         await expect(browser).toHaveUrlContaining("google");
     
