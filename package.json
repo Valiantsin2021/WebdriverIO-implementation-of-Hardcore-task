@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite end2end",
-        "wdio": "wdio run wdio-github.conf.js"
+        "test-headless": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio-headless -- --suite end2end",
+        "wdio": "wdio run wdio.conf.js",
+        "wdio-headless": "wdio run wdio-github.conf.js"
     },
     "keywords": [],
     "author": "",
