@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite smoke",
-        "wdio": "wdio run wdio.conf.js"
+        "wdio": "wdio run wdio-github.conf.js"
     },
     "keywords": [],
     "author": "",
