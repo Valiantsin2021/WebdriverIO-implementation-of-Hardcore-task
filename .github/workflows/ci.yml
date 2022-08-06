@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Chromium
-        run: sudo apt-get install chromium-browser firefox openjdk-8-jdk
+        run: sudo apt-get install chromium-browser firefox
       - name: Checkout
         uses: actions/checkout@v2
       - uses: actions/setup-node@v1
