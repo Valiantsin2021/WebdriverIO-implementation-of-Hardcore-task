@@ -1,16 +1,26 @@
 
-const BasePage = require ('../pages/BasePage');
+const BasePage = require('../pages/BasePage');
 
-const {urlMail, mail} = require ('../utils/constants')
+const {urlMail, mail} = require('../utils/constants')
 
 
 class MailPage extends BasePage{
 
-    get cookies(){ return $("#accept");}
-    get login(){ return $("#login");}
-    get refreshBtn(){ return $("#refresh");}
-    get monthlyEstimate(){ return $("#mail h2");}
-    get frame(){ return $("#ifmail");}
+    get cookies(){ 
+        return $("#accept");
+    }
+    get login(){ 
+        return $("#login");
+    }
+    get refreshBtn(){ 
+        return $("#refresh");
+    }
+    get monthlyEstimate(){ 
+        return $("#mail h2");
+    }
+    get frame(){ 
+        return $("#ifmail");
+    }
 
 
     // Open yopmail.com

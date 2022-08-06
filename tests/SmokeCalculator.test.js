@@ -11,17 +11,15 @@ describe('Smoke test of Google cloud calculator', () => {
         await expect(browser).toHaveUrlContaining("google");
         await CalculatorPage.clickSearch();
         await CalculatorPage.setCalculator();
-        await expect(browser).toHaveTitle("Google Cloud Pricing Calculator")
+        await expect(browser).toHaveTitle("Google Cloud Pricing Calculator");
         await MailPage.open();
         console.log(await browser.getTitle());
-    
-        const handles = await browser.getWindowHandles()
-        await browser.switchToWindow(handles[1])
+        const handles = await browser.getWindowHandles();
+        await browser.switchToWindow(handles[1]);
         await browser.pause(2000);
         await MailPage.manageCookies();
         await MailPage.setLocateMail();
         await expect(browser).toHaveTitle("Входящие");
         await browser.saveScreenshot('./screenshots/screenshot_smoke.png');
-
-    }, 3)
+    }, 3);
 });

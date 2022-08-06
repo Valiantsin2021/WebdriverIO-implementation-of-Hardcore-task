@@ -8,7 +8,6 @@ if(!ENV || !['dev', 'qa', 'stage', 'prod'].includes(ENV)){
 const {ReportAggregator, HtmlReporter} = require('wdio-html-nice-reporter');
 let reportAggregator = ReportAggregator;
 
-
 exports.config = {
     //
     // ====================
@@ -138,7 +137,10 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['selenium-standalone'],
+    services: [
+        ['selenium-standalone', { drivers: { firefox: true, chrome: true, chromiumedge: 'latest' } }]
+    ],
+    
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -305,22 +307,13 @@ exports.config = {
      * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
 
-     afterTest: async function (step, scenario, { error, duration, passed }, context) {
-            // const path = require('path');
-
+     afterTest: async function (step, scenario, { error}) {
         if (error) {
-            // const timestamp = new Date().toLocaleString();
-
-            // const filename = 'test_failed' + timestamp;
-
-            // const filePath = path.resolve('./', `${filename}.png`);
-
-            await browser.saveScreenshot('./screenshots/errors/test_failed.png')
+            const timestamp = new Date().toString().replace(/[^\w]/g, '');
+            await browser.saveScreenshot(`./screenshots/errors/test_failed${timestamp}.png`)
             await browser.takeScreenshot()
         }
     },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
