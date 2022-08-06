@@ -29,25 +29,25 @@ class CalculatorPage extends BasePage{
         return $("md-input-container.flex input[ng-model='listingCtrl.computeServer.quantity']");
     }
     get operatingSystemDropdown() { 
-        return $("#select_value_label_78 span");
+        return $("md-select[ng-model='listingCtrl.computeServer.os'] > md-select-value");
     }
     get operatingSystem() { 
-        return $("#select_option_88 div");
+        return $("md-option[value='free']");
     }
     get provisioningModelDropdown() { 
-        return $("#select_value_label_79 span.md-select-icon");
+        return $("md-select[aria-label='VM Class: Regular'] > md-select-value");
     }
     get provisioningModel() { 
         return $("md-option[value='regular']");
     }
     get seriesDropdown() { 
-        return $("#select_value_label_81 span.md-select-icon");
+        return $("md-select[placeholder='Series'] > md-select-value");
     }
     get series() { 
         return $("md-option[value='n1']");
     }
     get machineFamilyDropdown() { 
-        return $("#select_value_label_82 span.md-select-icon");
+        return $("md-select[placeholder='Instance type'] > md-select-value");
     }
     get machineFamily() { 
         return $("//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']");
@@ -68,22 +68,22 @@ class CalculatorPage extends BasePage{
         return $("//body/div[8]//md-option[2]");
     }
     get localSSDDropdown() { 
-        return $("#select_value_label_413 span.md-select-icon");
+        return $("md-select[placeholder='Local SSD'] > md-select-value");
     }
     get localSSD() { 
-        return $("#select_option_440 div.md-text");
+        return $("//body/div[9]//md-option[3]/div");
     }
     get dataCenterLocationDropdown() { 
-        return $("#select_value_label_84 span.md-select-icon");
+        return $("//div[16]/div[1]//md-select-value");
     }
     get dataCenterLocation() { 
-        return $("#input_118");
+        return $("input[ng-model='listingCtrl.inputRegionText.computeServer']");
     }
     get commitedUsageDropdown() { 
-        return $("#select_value_label_85 span.md-select-icon");
+        return $("md-select[aria-label='Committed usage: None'] >md-select-value");
     }
     get commitedUsage() { 
-        return $("#select_option_124 div");
+        return $("div[aria-hidden='false'] md-option[ng-value='1'] >div.md-text");
     }
     get addToEstimate() { 
         return $("//*[@id='mainForm']//button[@aria-label='Add to Estimate']");
@@ -135,11 +135,9 @@ class CalculatorPage extends BasePage{
     //  Search for Google cloud calculator
     async manageCookies(){
 
-        if(await this.cookies.waitForDisplayed()) {
-        await this.cookies.click();
-        } else {
-        return
-        }
+        if(await this.cookies.waitForClickable()) {
+            await this.cookies.click();
+        } return
     }
 
     async clickSearch(){
