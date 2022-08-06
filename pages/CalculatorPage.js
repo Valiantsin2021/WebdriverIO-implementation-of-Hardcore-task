@@ -134,7 +134,8 @@ class CalculatorPage extends BasePage{
     
     //  Search for Google cloud calculator
     async manageCookies(){
-
+        
+        await browser.setTimeout({ 'implicit': 5000 })
         if(await this.cookies.waitForClickable()) {
             await this.cookies.click();
         } return

@@ -6,8 +6,8 @@ describe('Smoke test of Google cloud calculator', () => {
     it("Open google and yopmail.com", async function(){
         await CalculatorPage.maximize();
         await CalculatorPage.open();
-        await CalculatorPage.manageCookies();
         await browser.pause(2000);
+        await CalculatorPage.manageCookies();
         await expect(browser).toHaveUrlContaining("google");
         await CalculatorPage.clickSearch();
         await CalculatorPage.setCalculator();
