@@ -136,9 +136,10 @@ class CalculatorPage extends BasePage{
     async manageCookies(){
         
         await browser.setTimeout({ 'implicit': 2000 })
-        if(await this.cookies.waitForClickable({ timeout: 5000 })) {
-            await this.cookies.click();
-        } return
+        await browser.waitUntil(async () => { 
+            return await this.cookies.isExisting()
+        }, 5000) 
+        await this.cookies.click() 
     }
 
     async clickSearch(){
