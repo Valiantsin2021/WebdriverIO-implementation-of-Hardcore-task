@@ -14,10 +14,10 @@ exports.config = {
     },
     {
       maxInstances: 5,
-      browserName: 'firefox',
+      browserName: 'MicrosoftEdge',
       acceptInsecureCerts: true,
-      'moz:firefoxOptions': {
-        args: ['-headless'],
+      'ms:edgeOptions': {
+        args: ['--headless']
       },
     },
   ],

@@ -68,8 +68,8 @@ exports.config = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         // 'goog:chromeOptions': {
-        //     // to run chrome headless the following flags are required
-        //     // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
+            // to run chrome headless the following flags are required
+            // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
         //     args: ['--headless', '--disable-gpu'],
         //     }
     },
@@ -78,11 +78,11 @@ exports.config = {
         browserName: 'firefox',
         acceptInsecureCerts: true,
     },
-    // {
-    //     maxInstances: 2,
-    //     browserName: 'MicrosoftEdge',
-    //     acceptInsecureCerts: true,
-    // },
+    {
+        maxInstances: 3,
+        browserName: 'MicrosoftEdge',
+        acceptInsecureCerts: true,
+    },
 
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -138,7 +138,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        ['selenium-standalone', { drivers: { firefox: true, chrome: true, chromiumedge: 'latest' } }]
+        ['selenium-standalone', { drivers: { firefox: true, chrome: true, MicrosoftEdge: true } }]
     ],
     
     
