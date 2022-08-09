@@ -139,8 +139,14 @@ class CalculatorPage extends BasePage{
         await browser.keys("Tab")
         await browser.keys("Tab")
         await browser.keys("Enter")
+            //     await browser.setTimeout({ 'implicit': 2000 })
+    //     await browser.waitUntil(async () => { 
+    //         return await this.cookies.isExisting()
+    //     }, 5000) 
+    //     await this.cookies.click() 
+    // }
     }
-    
+
     async clickSearch(){
 
         await this.inputSearch.waitForDisplayed();
