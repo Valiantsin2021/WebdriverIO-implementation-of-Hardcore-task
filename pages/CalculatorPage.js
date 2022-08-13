@@ -134,16 +134,16 @@ class CalculatorPage extends BasePage{
     
     //  Search for Google cloud calculator
     async manageCookies(){
-        await browser.keys("Tab") 
-        await browser.keys("Tab")
-        await browser.keys("Tab")
-        await browser.keys("Tab")
-        await browser.keys("Enter")
-            //     await browser.setTimeout({ 'implicit': 2000 })
-    //     await browser.waitUntil(async () => { 
-    //         return await this.cookies.isExisting()
-    //     }, 5000) 
-    //     await this.cookies.click() 
+        // await browser.keys("Tab") 
+        // await browser.keys("Tab")
+        // await browser.keys("Tab")
+        // await browser.keys("Tab")
+        // await browser.keys("Enter")
+        await browser.setTimeout({ 'implicit': 2000 })
+        await browser.waitUntil(async () => { 
+            return await this.cookies.isExisting()
+            }, 6000) 
+        await this.cookies.click() 
     // }
     }
 
@@ -161,7 +161,7 @@ class CalculatorPage extends BasePage{
 
     async setCalculator(){
 
-        await this.calculatorLink.waitForDisplayed();
+        await this.calculatorLink.waitForDisplayed({ timeout: 3000 });
         await this.calculatorLink.click();
         await browser.pause(2000);
         console.log(await browser.getTitle());
@@ -172,13 +172,13 @@ class CalculatorPage extends BasePage{
     async setComputeEngine(){
 
         await $(".devsite-snackbar-action").click();
-        await this.mainFrame.waitForExist();
+        await this.mainFrame.waitForExist({ timeout: 3000 });
         await browser.switchToFrame(await this.mainFrame);
-        await this.secondFrame.waitForExist();
+        await this.secondFrame.waitForExist({ timeout: 3000 });
         await browser.switchToFrame(await this.secondFrame);
         await browser.pause(3000);
 
-        await this.computeEngine.waitForClickable();
+        await this.computeEngine.waitForClickable({ timeout: 3000 });
         await this.computeEngine.click();
     }
 
@@ -186,7 +186,7 @@ class CalculatorPage extends BasePage{
 
     async setInstances(){
 
-        await this.instances.waitForDisplayed();
+        await this.instances.waitForDisplayed({ timeout: 3000 });
         await this.instances.setValue("4");
         
     } 
@@ -195,9 +195,9 @@ class CalculatorPage extends BasePage{
 
     async setOperatingSystem(){
 
-        await this.operatingSystemDropdown.waitForDisplayed();
+        await this.operatingSystemDropdown.waitForDisplayed({ timeout: 3000 });
         await this.operatingSystemDropdown.click();
-        await this.operatingSystem.waitForDisplayed();
+        await this.operatingSystem.waitForDisplayed({ timeout: 3000 });
         await this.operatingSystem.click();
 
     }
@@ -206,9 +206,9 @@ class CalculatorPage extends BasePage{
 
     async setProvisioningModel(){
 
-        await this.provisioningModelDropdown.waitForDisplayed();
+        await this.provisioningModelDropdown.waitForDisplayed({ timeout: 3000 });
         await this.provisioningModelDropdown.click();
-        await this.provisioningModel.waitForDisplayed();
+        await this.provisioningModel.waitForDisplayed({ timeout: 3000 });
         await this.provisioningModel.click();
         
     }
@@ -217,9 +217,9 @@ class CalculatorPage extends BasePage{
 
     async setSeries(){
 
-        await this.seriesDropdown.waitForDisplayed();
+        await this.seriesDropdown.waitForDisplayed({ timeout: 3000 });
         await this.seriesDropdown.click();
-        await this.series.waitForDisplayed();
+        await this.series.waitForDisplayed({ timeout: 3000 });
         await this.series.click();
 
     }
@@ -228,9 +228,9 @@ class CalculatorPage extends BasePage{
 
     async setMachineFamily(){
 
-        await this.machineFamilyDropdown.waitForDisplayed()
+        await this.machineFamilyDropdown.waitForDisplayed({ timeout: 3000 })
         await this.machineFamilyDropdown.click();
-        await this.machineFamily.waitForDisplayed();
+        await this.machineFamily.waitForDisplayed({ timeout: 3000 });
         await this.machineFamily.click();
 
     }
@@ -239,7 +239,7 @@ class CalculatorPage extends BasePage{
 
     async setAddGPUs(){
 
-        await this.addGPUs.waitForDisplayed();
+        await this.addGPUs.waitForDisplayed({ timeout: 3000 });
         await this.addGPUs.click();
 
     }
@@ -248,9 +248,9 @@ class CalculatorPage extends BasePage{
 
     async setGPUType(){
 
-        await this.GPUTypeDropdown.waitForDisplayed();
+        await this.GPUTypeDropdown.waitForDisplayed({ timeout: 3000 });
         await this.GPUTypeDropdown.click();
-        await this.GPUType.waitForDisplayed();
+        await this.GPUType.waitForDisplayed({ timeout: 3000 });
         await this.GPUType.click();
 
     }
@@ -259,9 +259,9 @@ class CalculatorPage extends BasePage{
 
     async setNumberOfGPUs(){
 
-        await this.numberOfGPUsDropdown.waitForDisplayed()
+        await this.numberOfGPUsDropdown.waitForDisplayed({ timeout: 3000 })
         await this.numberOfGPUsDropdown.click();
-        await this.numberOfGPUs.waitForDisplayed();
+        await this.numberOfGPUs.waitForDisplayed({ timeout: 3000 });
         await this.numberOfGPUs.click();
 
     }
@@ -270,9 +270,9 @@ class CalculatorPage extends BasePage{
 
     async setLocalSSD(){
 
-        await this.localSSDDropdown.waitForDisplayed();
+        await this.localSSDDropdown.waitForDisplayed({ timeout: 3000 });
         await this.localSSDDropdown.click();
-        await this.localSSD.waitForDisplayed();
+        await this.localSSD.waitForDisplayed({ timeout: 3000 });
         await this.localSSD.click();
 
     }
@@ -281,9 +281,9 @@ class CalculatorPage extends BasePage{
 
     async setDataCenterLocation(){
 
-        await this.dataCenterLocationDropdown.waitForDisplayed();
+        await this.dataCenterLocationDropdown.waitForDisplayed({ timeout: 3000 });
         await this.dataCenterLocationDropdown.click();
-        await this.dataCenterLocation.waitForDisplayed();
+        await this.dataCenterLocation.waitForDisplayed({ timeout: 3000 });
         await this.dataCenterLocation.setValue(region);
         await browser.keys('Tab');
         await browser.keys('Enter');
@@ -295,9 +295,9 @@ class CalculatorPage extends BasePage{
 
     async setCommitedUsage(){
 
-        await this.commitedUsageDropdown.waitForDisplayed();
+        await this.commitedUsageDropdown.waitForDisplayed({ timeout: 3000 });
         await this.commitedUsageDropdown.click();
-        await this.commitedUsage.waitForDisplayed()
+        await this.commitedUsage.waitForDisplayed({ timeout: 3000 })
         await this.commitedUsage.click();
 
     }
@@ -306,7 +306,7 @@ class CalculatorPage extends BasePage{
 
     async setAddToEstimate(){
 
-        await this.addToEstimate.waitForDisplayed();
+        await this.addToEstimate.waitForDisplayed({ timeout: 3000 });
         await this.addToEstimate.click();
 
     }
@@ -320,11 +320,11 @@ class CalculatorPage extends BasePage{
         await browser.switchToFrame(await this.secondFrame);
         await browser.pause(3000);
 
-        await this.emailBtn.waitForDisplayed();
+        await this.emailBtn.waitForDisplayed({ timeout: 3000 });
         await this.emailBtn.click();
-        await this.emailInput.waitForDisplayed();
+        await this.emailInput.waitForDisplayed({ timeout: 3000 });
         await this.emailInput.setValue(mail);
-        await this.sendEmailBtn.waitForDisplayed();
+        await this.sendEmailBtn.waitForDisplayed({ timeout: 3000 });
         await this.sendEmailBtn.click();
 
     }
