@@ -151,9 +151,10 @@ class CalculatorPage extends BasePage{
 
     async clickSearch(){
 
-        await this.inputSearch.waitForDisplayed();
+        await this.inputSearch.waitForDisplayed({ timeout: 3000 });
         await this.inputSearch.setValue(searchText);
-        await $('img.lnXdpd').click();
+        await browser.keys("Tab");
+        await this.searchBtn.waitForDisplayed({ timeout: 3000 });
         await this.searchBtn.click();
         await browser.pause(2000);
         console.log(await browser.getTitle());
