@@ -27,7 +27,7 @@ describe('Critical Path test of Google cloud calculator', function(){
         await CalculatorPage.setCommitedUsage();
         await CalculatorPage.setAddToEstimate();
         await expect(CalculatorPage.estimateAd).toHaveTextContaining("Compute Engine");
-    }, 2);
+    });
     it("Checks the VM class", async function(){
         //  Check Provisioning model is set to Regular in estimate
         await expect(CalculatorPage.VMClassEstimate).toHaveText(vmClassExpected);

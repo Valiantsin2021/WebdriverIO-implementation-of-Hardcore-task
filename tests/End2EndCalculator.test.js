@@ -11,7 +11,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await CalculatorPage.manageCookies();
         await CalculatorPage.clickSearch();
         await expect(browser).toHaveUrlContaining("google");
-    }, 2);
+    });
     it("Opens Google cloud calculator link and adds data to create estimate", async function(){
         await CalculatorPage.setCalculator();
         await expect(browser).toHaveTitle("Google Cloud Pricing Calculator");
@@ -29,7 +29,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await CalculatorPage.setCommitedUsage();
         await CalculatorPage.setAddToEstimate();
         await expect(CalculatorPage.estimateAd).toHaveTextContaining("Compute Engine");
-    }, 2);
+    });
     it("Checks the VM class", async function(){
         //  Check Provisioning model is set to Regular in estimate
         await expect(CalculatorPage.VMClassEstimate).toHaveText(vmClassExpected);
@@ -62,7 +62,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await MailPage.manageCookies();
         await MailPage.setLocateMail();
         await expect(browser).toHaveTitle("Входящие");        
-    }, 2);
+    });
     it("Sends email with estimate to created email account", async function(){
         const handles = await browser.getWindowHandles();
         await browser.switchToWindow(handles[0]);
