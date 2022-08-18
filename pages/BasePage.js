@@ -3,11 +3,11 @@
 class BasePage{
     
     async open () {
-        return browser.url('./')
+        return await browser.url('./')
     }
 
     async maximize(){
-        return browser.maximizeWindow()
+        return await browser.maximizeWindow()
     }
 }
 

@@ -128,11 +128,11 @@ class CalculatorPage extends BasePage{
     // Open Google Cloud
 
     async open(){
-        return super.open();
+        return await super.open();
     }
 
     async maximize(){
-        return super.maximize();
+        return await super.maximize();
     }
     
     //  Search for Google cloud calculator

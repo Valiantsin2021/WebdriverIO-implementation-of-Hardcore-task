@@ -3,7 +3,7 @@ const { vmClassExpected, instanceExpected, ssdExpected, commitmentTermExpected }
 const { regionExpected, monthlyRentExpected } = require('../models/region');
 
 describe('Critical Path test of Google cloud calculator', function(){   
-    it('Opens Google cloud website and searches for Google cloud calculator', async function(){
+    it('Opens Google website and searches for Google cloud calculator', async function(){
         await CalculatorPage.maximize();
         await CalculatorPage.open();
         await CalculatorPage.manageCookies();

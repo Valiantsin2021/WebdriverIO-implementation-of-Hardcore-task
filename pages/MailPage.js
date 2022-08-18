@@ -28,7 +28,7 @@ class MailPage extends BasePage{
 
     async open(){
 
-        await browser.newWindow(urlMail);
+        return await browser.newWindow(urlMail);
 
     }
 
