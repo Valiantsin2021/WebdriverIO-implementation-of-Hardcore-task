@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite smoke",
-        "test-headless": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio-headless -- --suite criticalPath",
+        "test-headless": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio-headless -- --suite smoke",
         "wdio": "wdio run wdio.conf.js",
         "wdio-headless": "wdio run wdio-github.conf.js"
     },
