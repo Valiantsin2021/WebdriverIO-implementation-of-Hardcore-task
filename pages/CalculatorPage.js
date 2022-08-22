@@ -153,7 +153,7 @@ class CalculatorPage extends BasePage{
 
         await this.inputSearch.waitForDisplayed({ timeout: 3000 });
         await this.inputSearch.setValue(searchText);
-        await browser.keys("Tab");
+        await browser.keys("Escape");
         await this.searchBtn.waitForDisplayed({ timeout: 3000 });
         await this.searchBtn.click();
         await browser.pause(2000);

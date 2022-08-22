@@ -73,16 +73,16 @@ exports.config = {
         //     args: ['--headless', '--disable-gpu'],
         //     }
     },
-    {
-        maxInstances: 3,
-        browserName: 'firefox',
-        acceptInsecureCerts: true,
-    },
     // {
     //     maxInstances: 3,
-    //     browserName: 'MicrosoftEdge',
+    //     browserName: 'firefox',
     //     acceptInsecureCerts: true,
     // },
+    {
+        maxInstances: 1,
+        browserName: 'MicrosoftEdge',
+        acceptInsecureCerts: true,
+    },
 
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -138,7 +138,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        ['selenium-standalone', { drivers: { firefox: true, chrome: true } }]
+        ['selenium-standalone', 'edgedriver']
     ],
     
     
