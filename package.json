@@ -4,13 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite smoke",
+        "smoke": "npm run report-clean && npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite smoke",
+        "criticalPath": "npm run report-clean && npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite criticalPath",
+        "e2e": "npm run report-clean && npx cross-env ENV=qa REG=FRANKFURT npm run wdio -- --suite end2end",
         "test-headless": "npx cross-env ENV=qa REG=FRANKFURT npm run wdio-headless -- --suite smoke",
+        "report-clean": "rimraf allure-results && rimraf allure-report",
         "wdio": "wdio run wdio.conf.js",
-        "wdio-headless": "wdio run wdio-github.conf.js"
+        "wdio-headless": "npm run report-clean && wdio run wdio-github.conf.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Valiantsin Lutchanka",
     "license": "ISC",
     "dependencies": {
         "selenium-webdriver": "^4.3.0"
@@ -27,6 +30,7 @@
         "chromedriver": "^103.0.0",
         "cross-env": "^7.0.3",
         "mocha": "^10.0.0",
+        "rimraf": "^3.0.2",
         "wdio": "^6.0.1",
         "wdio-edgedriver-service": "^1.2.0",
         "wdio-html-nice-reporter": "^8.0.3-beta2",

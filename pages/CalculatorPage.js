@@ -137,23 +137,22 @@ class CalculatorPage extends BasePage{
     
     //  Search for Google cloud calculator
     async manageCookies(){
-        await browser.keys("Tab") 
-        await browser.keys("Tab")
-        await browser.keys("Tab")
-        await browser.keys("Tab")
-        await browser.keys("Enter")
-        // await browser.setTimeout({ 'implicit': 2000 })
-        // await browser.waitUntil(async () => { 
-        //     return await this.cookies.isExisting()
-        //     }, 6000) 
-        // await this.cookies.click() 
+        // await browser.keys("Tab") 
+        // await browser.keys("Tab")
+        // await browser.keys("Tab")
+        // await browser.keys("Tab")
+        // await browser.keys("Enter")
+        await browser.waitUntil(async () => { 
+            return await this.cookies.isExisting()
+            }, 6000) 
+        await this.cookies.click() 
     }
 
     async clickSearch(){
 
         await this.inputSearch.waitForDisplayed({ timeout: 3000 });
         await this.inputSearch.setValue(searchText);
-        await browser.keys("Escape");
+        await browser.keys("Tab");
         await this.searchBtn.waitForDisplayed({ timeout: 3000 });
         await this.searchBtn.click();
         await browser.pause(2000);
