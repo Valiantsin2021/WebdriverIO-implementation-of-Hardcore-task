@@ -1,0 +1,25 @@
+    stages:
+      - setup
+      - test
+    setup:
+      stage: setup
+      image: node:latest
+      services:
+        - name: selenium/standalone-chrome
+          alias: selenium
+      script:
+        - |
+          cat << EOF > /etc/apt/sources.list.d/google-chrome.list
+          deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+          EOF
+        - wget -O- https://dl.google.com/linux/linux_signing_key.pub |gpg --dearmor > /etc/apt/trusted.gpg.d/google.gpg
+        - apt update
+        - apt install -y google-chrome-stable
+        - google-chrome --version
+        - npm install
+    test:
+      stage: test  
+      image: node:latest
+      script:
+        - npm run wdio-headless 
+        - allure generate -c ./allure-results -o ./allure-report
