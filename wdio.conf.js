@@ -138,7 +138,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: [
-        ['selenium-standalone', 'edgedriver']
+        ['selenium-standalone', 'edgedriver', 'geckodriver']
     ],
     
     
@@ -277,13 +277,25 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+     beforeSuite: function () {
+        browser.addCommand("waitAndClick", async function () {
+            await this.waitForDisplayed()
+            await this.click()
+        }, true)
+    },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+     beforeTest: function () {
+        const chai = require('chai')
+        const chaiWebdriver = require('chai-webdriverio').default
+
+        chai.use(chaiWebdriver(browser))
+
+        global.assert = chai.assert
+        // global.expect = chai.expect
+        global.should = chai.should
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -355,11 +367,6 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    //  onComplete: function(exitCode, config, capabilities, results) {
-    //     (async () => {
-    //         await reportAggregator.createReport();
-    //     })();
-    // },
     onComplete: function() {
         (async () => {
             await reportAggregator.createReport();
