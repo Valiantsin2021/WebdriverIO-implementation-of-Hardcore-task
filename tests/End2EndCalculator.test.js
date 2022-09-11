@@ -61,7 +61,7 @@ describe('End to end test of Google Cloud calculator with the results emailed to
         await browser.switchToWindow(handles[1]);
         await MailPage.manageCookies();
         await MailPage.setLocateMail();
-        await expect(browser).toHaveTitle("Входящие");        
+        await expect(browser).toHaveTitle("Inbox");        
     });
     it("Sends email with estimate to created email account", async function(){
         const handles = await browser.getWindowHandles();
