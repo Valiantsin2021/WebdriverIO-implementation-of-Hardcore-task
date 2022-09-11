@@ -7,8 +7,7 @@ const {urlMail, mail} = require('../utils/constants')
 class MailPage extends BasePage{
 
     get cookies(){ 
-        return $('#cons-dialog');
-        // return $('#accept');
+        return $('#accept');
     }
     get login(){ 
         return $("#login");
@@ -35,13 +34,10 @@ class MailPage extends BasePage{
     //      Create temporal email
 
     async manageCookies(){
-        await this.cookies.click();
-        await browser.keys("Tab") 
-        await browser.keys("Tab") 
-        await browser.keys("Tab") 
-        await browser.keys("Enter")  
-        // await this.cookies.waitForDisplayed({ timeout: 3000 });
-        // await this.cookies.click();
+        if(await this.cookies.isExisting()) {
+            await this.cookies.waitAndClick();
+        }
+        return  
     }
 
     async setLocateMail(){
