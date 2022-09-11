@@ -26,6 +26,6 @@ describe('Smoke test of Google cloud calculator', () => {
         await browser.pause(2000);
         await MailPage.manageCookies();
         await MailPage.setLocateMail();
-        await expect(browser).toHaveTitle("Входящие");
+        await expect(browser).toHaveTitle("Входящие" || "Inbox");
     });
 });
