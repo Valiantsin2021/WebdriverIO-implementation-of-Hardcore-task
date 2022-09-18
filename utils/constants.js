@@ -2,7 +2,7 @@
     // shared constants
     mail: "me@yopmail.com",
     searchText: "Cloud calculator",   
-    urlMail: "https://yopmail.com/",
+    urlMail: "https://yopmail.com/en/",
     // calculator constants Frankfurt
     vmClassExpected: "Provisioning model: Regular",
     instanceExpected: "Instance type: n1-standard-8\nCommitted Use Discount applied",
