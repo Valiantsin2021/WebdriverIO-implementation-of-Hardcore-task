@@ -17,5 +17,10 @@ pipeline {
                 bat encoding: 'ASCII', returnStatus: true, script: 'npm run wdio'
             }
         }
+        stage('Generate allure report') {
+            steps {
+                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            }
+        }
     }
 }
