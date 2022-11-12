@@ -14,7 +14,7 @@ pipeline {
         }
         stage('smoke') {
             steps {
-                bat encoding: 'ASCII', returnStatus: true, script: 'npx cross-env ENV=qa REG=FRANKFUR BROWSER=chrome && npm run wdio'
+                bat encoding: 'ASCII', returnStatus: true, script: 'npx cross-env ENV=qa REG=FRANKFURT BROWSER=chrome && npm run wdio'
             }
         }
         stage('Generate allure report') {
