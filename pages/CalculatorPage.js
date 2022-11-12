@@ -205,48 +205,48 @@ class CalculatorPage extends BasePage {
     await this.provisioningModel.waitAndClick()
   }
 
-  //      Set series to n1
+  // Set series to n1
 
   async setSeries() {
     await this.seriesDropdown.waitAndClick()
     await this.series.waitAndClick()
   }
 
-  //      Set Instance type: n1-standard-8 (vCPUs: 8, RAM: 30 GB)
+  // Set Instance type: n1-standard-8 (vCPUs: 8, RAM: 30 GB)
 
   async setMachineFamily() {
     await this.machineFamilyDropdown.waitAndClick()
     await this.machineFamily.waitAndClick()
   }
 
-  //      Select add GPU
+  // Select add GPU
 
   async setAddGPUs() {
     await this.addGPUs.waitAndClick()
   }
 
-  //      Set GPU type NVIDIA Tesla V100
+  // Set GPU type NVIDIA Tesla V100
 
   async setGPUType() {
     await this.GPUTypeDropdown.waitAndClick()
     await this.GPUType.waitAndClick()
   }
 
-  //      Set number of GPU to 1
+  // Set number of GPU to 1
 
   async setNumberOfGPUs() {
     await this.numberOfGPUsDropdown.waitAndClick()
     await this.numberOfGPUs.waitAndClick()
   }
 
-  //      Set local SSD to 2x375 Gb
+  // Set local SSD to 2x375 Gb
 
   async setLocalSSD() {
     await this.localSSDDropdown.waitAndClick()
     await this.localSSD.waitAndClick()
   }
 
-  //      Set Datacenter location: Frankfurt (europe-west3)
+  // Set Datacenter location: Frankfurt (europe-west3)
 
   async setDataCenterLocation() {
     await this.dataCenterLocationDropdown.waitAndClick()
@@ -257,20 +257,20 @@ class CalculatorPage extends BasePage {
     await browser.pause(2000)
   }
 
-  //      Set Committed usage: 1 Year
+  // Set Committed usage: 1 Year
 
   async setCommitedUsage() {
     await this.commitedUsageDropdown.waitAndClick()
     await this.commitedUsage.waitAndClick()
   }
 
-  //      Click on estimate button
+  // Click on estimate button
 
   async setAddToEstimate() {
     await this.addToEstimate.waitAndClick()
   }
 
-  //      Send email with estimate
+  // Send email with estimate
 
   async setSendMail() {
     await browser.switchToFrame(await this.mainFrame)

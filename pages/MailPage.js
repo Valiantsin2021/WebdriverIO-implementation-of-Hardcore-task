@@ -25,7 +25,7 @@ class MailPage extends BasePage {
     return await browser.newWindow(urlMail)
   }
 
-  //      Create temporal email
+  // Create temporal email
 
   async manageCookies() {
     if (await this.cookies.isExisting()) {
@@ -40,7 +40,7 @@ class MailPage extends BasePage {
     await browser.keys('Enter')
   }
 
-  //      Check new email received and check monthly rent sum estimate
+  // Check new email received and check monthly rent sum estimate
 
   async checkEmailEstimatedReceived() {
     await browser.pause(3000)
