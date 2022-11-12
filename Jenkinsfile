@@ -14,7 +14,7 @@ pipeline {
         }
         stage('smoke') {
             steps {
-                bat encoding: 'ASCII', returnStatus: true, script: 'wdio-headless'
+                bat encoding: 'ASCII', returnStatus: true, script: 'npm run wdio'
             }
         }
     }
