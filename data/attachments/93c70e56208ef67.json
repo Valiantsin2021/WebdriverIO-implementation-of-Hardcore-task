@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#accept\"}\n  (Session info: headless MicrosoftEdge=107.0.1418.24)",
+  "stacktrace": "#0 0x564a576d6743 <unknown>\n#1 0x564a57472211 <unknown>\n#2 0x564a574b1ef9 <unknown>\n#3 0x564a574b2151 <unknown>\n#4 0x564a574ed464 <unknown>\n#5 0x564a574d3dfd <unknown>\n#6 0x564a574eb302 <unknown>\n#7 0x564a574d3bf3 <unknown>\n#8 0x564a574a4f34 <unknown>\n#9 0x564a574a5f41 <unknown>\n#10 0x564a57715088 <unknown>\n#11 0x564a57716f1e <unknown>\n#12 0x564a57716990 <unknown>\n#13 0x564a577175e5 <unknown>\n#14 0x564a57703c2c <unknown>\n#15 0x564a5771792e <unknown>\n#16 0x564a576f9d65 <unknown>\n#17 0x564a57732988 <unknown>\n#18 0x564a57732ac0 <unknown>\n#19 0x564a5774bd25 <unknown>\n#20 0x7f86eceeb609 start_thread\n"
+}
