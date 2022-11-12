@@ -1,4 +1,6 @@
 # WebdriverIO-implementation-of-Hardcore-task
+
+## Allure report page https://valiantsin2021.github.io/WebdriverIO-implementation-of-Hardcore-task/
  
 1. The Page object model implemented, 
 2. There are three test suites (smoke, critical path, end2end) added,
