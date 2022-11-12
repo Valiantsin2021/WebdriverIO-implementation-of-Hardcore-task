@@ -9,24 +9,16 @@ exports.config = {
       acceptInsecureCerts: true,
       // We need to extends some Chrome flags in order to tell Chrome to run headless
       'goog:chromeOptions': {
-        args: ['--headless', '--disable-gpu', '--disable-dev-shm-usage'],
-      },
+        args: ['--headless', '--disable-gpu', '--disable-dev-shm-usage']
+      }
     },
     {
       maxInstances: 5,
-      browserName: 'firefox',
+      browserName: 'MicrosoftEdge',
       acceptInsecureCerts: true,
-      'moz:firefoxOptions': {
-        args: ['--headless']
-      },
-    },
-    {
-        maxInstances: 5,
-        browserName: 'MicrosoftEdge',
-        acceptInsecureCerts: true,
-        'ms:edgeOptions': {
-          args: ['--headless', '--disable-gpu', '--disable-dev-shm-usage']
-      },
-    },
-  ],
+      'ms:edgeOptions': {
+        args: ['--headless', '--disable-gpu', '--disable-dev-shm-usage']
+      }
+    }
+  ]
 }

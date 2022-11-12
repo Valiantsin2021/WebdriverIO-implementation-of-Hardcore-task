@@ -11,6 +11,7 @@ GitlabCI yml file added
 Travis yml file added
 Custom command in before hook
 Chai: assert and should added
+Allure report publish on Github Pages added
 
 To run smoke tests - npm run smoke
 To run criticalPath - npm run criticalPath

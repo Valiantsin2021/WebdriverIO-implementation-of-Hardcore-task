@@ -1,15 +1,11 @@
+class BasePage {
+  async open() {
+    return await browser.url('./')
+  }
 
-
-class BasePage{
-    
-    async open () {
-        return await browser.url('./')
-    }
-
-    async maximize(){
-        return await browser.maximizeWindow()
-    }
+  async maximize() {
+    return await browser.maximizeWindow()
+  }
 }
 
-
-module.exports = BasePage;
+module.exports = BasePage

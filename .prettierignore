@@ -1,0 +1,4 @@
+node_modules/
+mochawesome-report/
+results/
+index.json
