@@ -2,6 +2,7 @@ const url = require('./utils/url')
 const ENV = process.env.ENV
 const brows = require('./utils/browsers.js')
 const BROWSER = process.env.BROWSER
+let caps
 if (!ENV || !['dev', 'qa', 'stage', 'prod'].includes(ENV)) {
   console.log('please use the correct ENV value: dev | qa | stage | prod')
   process.exit()
@@ -297,6 +298,7 @@ exports.config = {
    * @param {<Object>} results object containing test results
    */
   onComplete: function () {
+    // eslint-disable-next-line no-extra-semi
     ;(async () => {
       await reportAggregator.createReport()
     })()

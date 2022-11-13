@@ -43,7 +43,6 @@ class MailPage extends BasePage {
   // Check new email received and check monthly rent sum estimate
 
   async checkEmailEstimatedReceived() {
-    await browser.pause(3000)
     await this.refreshBtn.waitForClickable({ timeout: 5000 })
     await this.refreshBtn.click()
     await browser.switchToFrame(await this.frame)

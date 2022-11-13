@@ -158,7 +158,6 @@ class CalculatorPage extends BasePage {
     await this.inputSearch.setValue(searchText)
     await browser.keys('Tab')
     await this.searchBtn.waitAndClick()
-    await browser.pause(2000)
     console.log(await browser.getTitle())
   }
 
@@ -166,7 +165,6 @@ class CalculatorPage extends BasePage {
 
   async setCalculator() {
     await this.calculatorLink.waitAndClick()
-    await browser.pause(2000)
     console.log(await browser.getTitle())
   }
 
@@ -178,7 +176,6 @@ class CalculatorPage extends BasePage {
     await browser.switchToFrame(await this.mainFrame)
     await this.secondFrame.waitForExist({ timeout: 3000 })
     await browser.switchToFrame(await this.secondFrame)
-    await browser.pause(3000)
     await this.computeEngine.waitAndClick()
     // await this.computeEngine.waitForClickable({ timeout: 3000 });
     // await this.computeEngine.click();
@@ -254,7 +251,6 @@ class CalculatorPage extends BasePage {
     await this.dataCenterLocation.setValue(region)
     await browser.keys('Tab')
     await browser.keys('Enter')
-    await browser.pause(2000)
   }
 
   // Set Committed usage: 1 Year
@@ -275,7 +271,6 @@ class CalculatorPage extends BasePage {
   async setSendMail() {
     await browser.switchToFrame(await this.mainFrame)
     await browser.switchToFrame(await this.secondFrame)
-    await browser.pause(3000)
 
     await this.emailBtn.waitAndClick()
     await this.emailInput.waitForDisplayed({ timeout: 3000 })

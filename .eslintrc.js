@@ -4,11 +4,12 @@ module.exports = {
     'plugin:wdio/recommended',
     'eslint:recommended'
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'wdio'],
   env: {
     browser: true,
     es6: true,
-    node: true
+    node: true,
+    mocha: true
   },
   parserOptions: {
     ecmaVersion: 8
