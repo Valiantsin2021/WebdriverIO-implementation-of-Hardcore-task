@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#L2AGLb\"}\n  (Session info: headless chrome=112.0.5615.49)",
-  "stacktrace": "#0 0x559cbfdebfe3 <unknown>\n#1 0x559cbfb2ad36 <unknown>\n#2 0x559cbfb67c4d <unknown>\n#3 0x559cbfb67d61 <unknown>\n#4 0x559cbfba36a4 <unknown>\n#5 0x559cbfb888ed <unknown>\n#6 0x559cbfba1232 <unknown>\n#7 0x559cbfb88693 <unknown>\n#8 0x559cbfb5b03a <unknown>\n#9 0x559cbfb5c17e <unknown>\n#10 0x559cbfdaddbd <unknown>\n#11 0x559cbfdb1c6c <unknown>\n#12 0x559cbfdbb4b0 <unknown>\n#13 0x559cbfdb2d63 <unknown>\n#14 0x559cbfd85c35 <unknown>\n#15 0x559cbfdd6138 <unknown>\n#16 0x559cbfdd62c7 <unknown>\n#17 0x559cbfde4093 <unknown>\n#18 0x7f099e5fbb43 <unknown>\n"
-}
