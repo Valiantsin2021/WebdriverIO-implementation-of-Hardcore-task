@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#L2AGLb\"}\n  (Session info: headless MicrosoftEdge=112.0.1722.34)",
-  "stacktrace": "#0 0x556df421ba03 <unknown>\n#1 0x556df3f35d91 <unknown>\n#2 0x556df3f71f5f <unknown>\n#3 0x556df3f72211 <unknown>\n#4 0x556df3fae804 <unknown>\n#5 0x556df3f94b9d <unknown>\n#6 0x556df3fac7a6 <unknown>\n#7 0x556df3f94943 <unknown>\n#8 0x556df3f66fc1 <unknown>\n#9 0x556df3f681fe <unknown>\n#10 0x556df41e966b <unknown>\n#11 0x556df41ebfd9 <unknown>\n#12 0x556df41eb9df <unknown>\n#13 0x556df41ec735 <unknown>\n#14 0x556df41f35bb <unknown>\n#15 0x556df41ecaee <unknown>\n#16 0x556df41cc690 <unknown>\n#17 0x556df4208ca8 <unknown>\n#18 0x556df4208de4 <unknown>\n#19 0x556df4215cd6 <unknown>\n#20 0x7f01f61d8b43 <unknown>\n"
-}
